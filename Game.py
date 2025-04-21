@@ -47,13 +47,17 @@ def show_instructions():
     def countdown():
         for i in range(3, 0, -1):
             screen.fill(Config.BLACK)
-            text_surface = font.render(str(i), True, Config.White)
+            text_surface = font.render(str(i), True, Config.WHITE)
             text_rect = text_surface.get_rect(center=(Config.WIDTH // 2, Config.HEIGHT // 2))
             screen.blit(text_surface, text_rect)
             pygame.display.flip()
             pygame.time.delay(1000)
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 waiting = False
+
+    countdown()
+show_instructions()
+
 while True:
     keys = pygame.key.get_pressed()
 
