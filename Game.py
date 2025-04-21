@@ -38,6 +38,7 @@ def show_instructions():
         text_surface = font.render(line, True, Config.WHITE)
         screen.blit(text_surface, (50, 50 + i * 30))
     pygame.display.flip()
+    pygame.time.display(10000)
     waiting = True
     while waiting:
         for event in pygame.event.get():
