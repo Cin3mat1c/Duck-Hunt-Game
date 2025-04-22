@@ -23,41 +23,8 @@ collisionCounter = 0
 Lives = 3
 
 font = pygame.font.SysFont("timesnewroman", 24)
-def show_instructions():
-    instructions = [
-        "Welcome to Duck Hunt!",
-        "Instructions:",
-        "- Move your mouse to aim.",
-        "- Click to shoot the duck.",
-        "- ESC to quit.",
-        "",
-        "Press any key to start..."
-    ]
-    screen.fill(Config.BLACK)
-    for i, line in enumerate(instructions):
-        text_surface = font.render(line, True, Config.WHITE)
-        screen.blit(text_surface, (50, 50 + i * 30))
-    pygame.display.flip()
-    pygame.time.display(10000)
-    waiting = True
-    while waiting:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-    def countdown():
-        for i in range(3, 0, -1):
-            screen.fill(Config.BLACK)
-            text_surface = font.render(str(i), True, Config.WHITE)
-            text_rect = text_surface.get_rect(center=(Config.WIDTH // 2, Config.HEIGHT // 2))
-            screen.blit(text_surface, text_rect)
-            pygame.display.flip()
-            pygame.time.delay(1000)
-            if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
-                waiting = False
 
-    countdown()
-show_instructions()
+background = pygame.image.load().convert()
 
 while True:
     keys = pygame.key.get_pressed()
@@ -67,6 +34,8 @@ while True:
             sys.exit(0)
         if keys[pygame.K_ESCAPE]:
             sys.exit(0)
+
+        screen.blit(background, (0, 0))
 
         if mouseRect.colliderect(duckRect) and pygame.mouse.get_pressed()[0]:
             collisionCounter += 1
