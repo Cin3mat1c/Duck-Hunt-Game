@@ -1,5 +1,7 @@
 import pygame
 
+pygame.mixer.init()
+
 WIDTH, HEIGHT = 800, 600
 FPS = 60
 Spawn_Ducks_Event = pygame.USEREVENT + 1
@@ -11,11 +13,11 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 
 duckSpeeds = {
-    "slow": 5,
-    "medium": 9,
-    "fast": 13
+    "slow": 3,
+    "medium": 5,
+    "fast": 7
 }
 
-duckSprites = {
+shotgun_sound = pygame.mixer.Sound("ShotgunShot.mp3")
 
-}
+
