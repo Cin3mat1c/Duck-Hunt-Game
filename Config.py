@@ -13,9 +13,9 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 
 duckSpeeds = {
-    "slow": 3,
-    "medium": 5,
-    "fast": 7
+    "slow": 5,
+    "medium": 7,
+    "fast": 9
 }
 
 shotgun_sound = pygame.mixer.Sound("ShotgunShot.mp3")

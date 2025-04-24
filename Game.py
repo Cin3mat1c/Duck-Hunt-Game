@@ -20,7 +20,7 @@ rock_pos = (250, 350)
 shrub_pos = (450, 480)
 bush_pos = (100, 450)
 
-spawns = [(250,350), (450,480), (100,450)]
+spawns = [(250,350), (450,480), (100,450), (25, 100)]
 
 mouseRect = pygame.Rect(0, 0, 1, 1)
 
@@ -122,12 +122,12 @@ while running:
 
     livesText = font.render(f"Lives: {Lives}", True, Config.WHITE)
     lives_rect = livesText.get_rect(topright=(Config.WIDTH - 10, 10))
-    screen.blit(livesText, lives_rect)
 
     screen.blit(rock, rock_pos)
     screen.blit(shrub, shrub_pos)
     screen.blit(bush, bush_pos)
     screen.blit(scoreText, text_rect1)
+    screen.blit(livesText, lives_rect)
 
     pygame.display.update()
 
