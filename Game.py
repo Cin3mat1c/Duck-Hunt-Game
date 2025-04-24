@@ -50,6 +50,7 @@ def show_instructions():
     for i, line in enumerate(instructions):
         text_surface = font.render(line, True, Config.WHITE)
         screen.blit(text_surface, (50, 50 + i * 30))
+        Config.startGame.play()
     pygame.display.flip()
 
     waiting = True
