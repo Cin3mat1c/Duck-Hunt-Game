@@ -5,7 +5,7 @@ import Config
 class Ducks:
     def __init__(self):
         self.type = random.choice(list(Config.duckSpeeds.keys()))
-        self.speed = random.randint(3, 7)
+        self.speed = Config.duckSpeeds[self.type]
         self.sprite = pygame.image.load("flyingDUCK.png").convert_alpha()
         self.rect = self.sprite.get_rect()
         self.spawn_sound = pygame.mixer.Sound("DuckQuack.mp3")

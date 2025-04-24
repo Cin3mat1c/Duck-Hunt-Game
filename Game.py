@@ -39,6 +39,7 @@ def show_instructions():
         "Instructions:",
         "- Move your mouse to aim.",
         "- Click to shoot the ducks.",
+        "- Score as high as you can!",
         "- Don't let 3 ducks escape!",
         "",
         "Press any key to start..."
@@ -78,10 +79,10 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        if event.type == spawning:
+        if event.type == Config.Spawn_Ducks_Event:
             duck = Ducks()
-            x, y = random.choice(spawns)  # Random spawn location from the 3
-            duck.rect.topleft = (x, y)  # Set position
+            x, y = random.choice(spawns)
+            duck.rect.topleft = (x, y)
             ducks.append(duck)
             duck.spawn_sound.play()
 
