@@ -15,12 +15,15 @@ background = pygame.image.load("backgroundDUCK3.png").convert()
 rock = pygame.transform.scale(pygame.image.load("DUCKGAMErock.png").convert_alpha(), (120, 120))
 shrub = pygame.transform.scale(pygame.image.load("DUCKGAMEshrub.png").convert_alpha(), (150, 100))
 bush = pygame.transform.scale(pygame.image.load("DUCKGAMEbush.png").convert_alpha(), (180, 100))
+flowerBush = pygame.transform.scale(pygame.image.load("flowerBush.png").convert_alpha(), (120, 120))
 
 rock_pos = (250, 350)
 shrub_pos = (450, 480)
 bush_pos = (100, 450)
+flowerBush_pos = (650, 400)
+tree_pos = (25, 100)
 
-spawns = [(250,350), (450,480), (100,450), (25, 100)]
+spawns = [rock_pos, shrub_pos, bush_pos, tree_pos, flowerBush_pos]
 
 mouseRect = pygame.Rect(0, 0, 1, 1)
 
@@ -76,6 +79,9 @@ pygame.time.set_timer(spawning, 2000)
 
 running = True
 while running:
+
+    time = pygame.time.get_ticks()
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -92,7 +98,7 @@ while running:
     mouseRect.center = (mousePOS)
 
     for duck in ducks[:]:
-        duck.draw(screen)
+        duck.draw(screen, time)
         duck.duckMove()
         if (duck.rect.top > Config.HEIGHT or
                 duck.rect.bottom < 0 or
@@ -114,6 +120,7 @@ while running:
         text_rect = game_over_text.get_rect(center=(Config.WIDTH // 2, Config.HEIGHT // 2))
         screen.blit(game_over_text, text_rect)
         pygame.display.flip()
+        Config.loseGame.play()
         pygame.time.delay(3000)
 
 
@@ -126,6 +133,7 @@ while running:
     screen.blit(rock, rock_pos)
     screen.blit(shrub, shrub_pos)
     screen.blit(bush, bush_pos)
+    screen.blit(flowerBush, flowerBush_pos)
     screen.blit(scoreText, text_rect1)
     screen.blit(livesText, lives_rect)
 

@@ -19,5 +19,8 @@ duckSpeeds = {
 }
 
 shotgun_sound = pygame.mixer.Sound("ShotgunShot.mp3")
+quack = pygame.mixer.Sound("DuckQuack.mp3")
+loseGame = pygame.mixer.Sound("lose-101soundboards.mp3")
 
-
+duck1 = "flyingDUCK.png"
+duck2 = "flyingDUCK2.png"
