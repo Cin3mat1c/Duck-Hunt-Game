@@ -21,9 +21,8 @@ rock_pos = (250, 350)
 shrub_pos = (450, 480)
 bush_pos = (100, 450)
 flowerBush_pos = (650, 400)
-tree_pos = (25, 100)
 
-spawns = [rock_pos, shrub_pos, bush_pos, tree_pos, flowerBush_pos]
+spawns = [rock_pos, shrub_pos, bush_pos, flowerBush_pos]
 
 mouseRect = pygame.Rect(0, 0, 1, 1)
 
